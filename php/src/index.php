@@ -35,10 +35,11 @@
 	}
 
 ?>
+
 <!doctype html>
 <html lang="pt-br">
 	<head>
-		<title>Basic Webapp Test</title>
+		<title>Infomed Test</title>
 		<meta charset="utf-8">
 
 		<link rel="stylesheet" type="text/css" href="css/estilo.css">
@@ -46,10 +47,62 @@
 	</head>
 
 	<body>
-		<h1>Lorem Ipsum</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam placerat odio vitae nisi elementum, ac volutpat felis pharetra. Aliquam condimentum tellus ac nibh mollis rutrum. Maecenas vel ultricies enim, vitae lacinia nibh. Maecenas in tincidunt enim. Quisque fringilla sapien ac elit vestibulum, eget consequat risus venenatis. </p>
-		<p>A random phrase emerges!</p>
-		<h1>Now with db!</h1>
+	<form>
+		
+		<fieldset>
+			<legend>Detalhes de Contato</legend>
+
+			<div>
+				<label for="nome">Nome: </label>
+				<input type="text" name="Nome" id="nome" size="8" required>
+			</div>
+
+			<div>
+				<label for="crm">CRM: </label>
+				<input type="text" name="CRM" id="crm" required>
+			</div>
+
+			<div>
+				<label for="especialidade">Especialidade: </label>
+				<select id="especialidade">
+					<option value="Alergologia">Alergologia</option>
+					<option value="Angiologia">Angiologia</option>
+					<option value="Buco maxilo">Buco Maxilo</option>
+					<option value="Cardiologia clinica">Cardiologia Clínica</option>
+					<option value="Cardiologia infantil">Cardiologia Infantil</option>
+					<option value="Cirurgia cabeca e pescoco">Cirurgia Cabeça e Pescoço</option>
+					<option value="Cirurgia cardiaca">Cirurgia Cardíaca</option>
+					<option value="Cirurgia de torax">Cirurgia de Tórax</option>
+				</datalist>
+			</div>
+
+		</fieldset>
+
+		<fieldset>
+			<legend>Comentários</legend>
+			<div>
+				<label for="mensagem">Mensagem:</label>
+				<textarea name="mensagem" id="mensagem"></textarea>
+			</div>
+		</fieldset>
+
+		<fieldset>
+			<legend>Lembrar de mim</legend>
+			<div>
+				<label>
+					<input class="radio" type="radio" name="lembrar" id="sim"> Sim
+				</label>
+			</div>
+
+			<div>
+				<label>
+					<input class="radi" type="radio" name="lembrar" id="nao"> Não
+				</label>
+			</div>
+
+		</fieldset>
+
+		</form>
 
        
 	</body>
