@@ -117,7 +117,7 @@
 	</head>
 
 	<body>
-		<a href="index.php" id="back-button">Voltar</a>
+		<a href="../../index.html" id="back-button">Voltar</a>
 		
 		<fieldset>
 		<legend>Detalhes de Contato</legend>

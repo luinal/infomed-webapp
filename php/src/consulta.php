@@ -1,3 +1,44 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>Infomed - Tela Inicial</title>
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" type="text/css" href="css/estilo.css">
+
+    <body id="tela_de_consulta">
+
+		<div id="containerConsulta">
+			<div id="logo">
+				<h1>Info<span id="title-span">med</span></h1>
+				
+			</div>
+		
+
+		</div>
+
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -68,9 +109,12 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+    <a href="../../index.html" id="back-button">Voltar</a><br>
+    <br>
     <div class="search-box">
         <input type="text" autocomplete="off" placeholder="Search country..." />
         <div class="result"></div>
     </div>
 </body>
 </html>
+-->

@@ -1,10 +1,8 @@
-version: '3.8'
+version: '2.1'
 services:
-  php-apache-environment:
-    container_name: php-apache
-    build:
-      context: .
-      dockerfile: Dockerfile
+  infomed:
+    container_name: infomed
+    image: luinal/infomed:latest
     depends_on:
       - db
     volumes:

@@ -1,7 +1,19 @@
 <?php
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-$link = mysqli_connect("localhost", "root", "", "demo");
+$host = 'db';
+
+	// Database use name
+	$user = 'MYSQL_USER';
+
+	//database user password
+	$pass = 'MYSQL_PASSWORD';
+
+	// database name
+	$mydatabase = 'MYSQL_DATABASE';
+
+	// check the MySQL connection status
+	$link = new mysqli($host, $user, $pass, $mydatabase);
  
 // Check connection
 if($link === false){
@@ -10,7 +22,7 @@ if($link === false){
  
 if(isset($_REQUEST["term"])){
     // Prepare a select statement
-    $sql = "SELECT * FROM users WHERE username LIKE ?";
+    $sql = "SELECT * FROM usuarios WHERE nome LIKE ?";
     
     if($stmt = mysqli_prepare($link, $sql)){
         // Bind variables to the prepared statement as parameters
@@ -27,7 +39,7 @@ if(isset($_REQUEST["term"])){
             if(mysqli_num_rows($result) > 0){
                 // Fetch result rows as an associative array
                 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                    echo "<p>" . $row["name"] . "</p>";
+                    echo "<p>" . $row["nome"] . "</p>";
                 }
             } else{
                 echo "<p>No matches found</p>";
