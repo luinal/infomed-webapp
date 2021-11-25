@@ -61,16 +61,3 @@
 	} else {
 		echo "Connected to MySQL server successfully!";
 	}
-<<<<<<< HEAD
-<<<<<<<< HEAD:app/php/src/conecta.php
-?>
-========
-
-
-?>
->>>>>>>> 0ff919fbd06c3bc1a0f96bcf1b81ec361cfbad97:app/conecta.php
-=======
-
-
-?>
->>>>>>> 0ff919fbd06c3bc1a0f96bcf1b81ec361cfbad97
