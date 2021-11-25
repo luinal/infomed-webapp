@@ -1,33 +1,30 @@
 version: '2.1'
 services:
-  infomed:
-    container_name: infomed
-    image: luinal/infomed:latest
-    depends_on:
-      - db
-    volumes:
-      - .:/var/www/html/
+  infomed-app:
+    container_name: infomed-app
+    image: infomed-app:latest
+    links:
+      - infomed-db
     ports:
       - 8000:80
-  db:
-    container_name: database
-    image: mysql
+  infomed-db:
+    container_name: infomed-db
+    image: infomed-db:latest
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
       MYSQL_DATABASE: MYSQL_DATABASE
       MYSQL_USER: MYSQL_USER
       MYSQL_PASSWORD: MYSQL_PASSWORD
-    volumes:
-      - ./php/src:/var/www/html/
     ports:
       - "9906:3306"
   phpmyadmin:
+    container_name: infomed-phpmyadmin
     image: phpmyadmin
     ports:
-        - '8023:80'
+      - '8023:80'
     restart: always
     environment:
-        PMA_HOST: db
-    depends_on:
-        - db
+        PMA_HOST: infomed-db
+    links:
+      - infomed-db

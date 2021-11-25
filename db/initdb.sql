@@ -1,0 +1,10 @@
+CREATE TABLE usuarios (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(120) NOT NULL,
+crm VARCHAR(7) NOT NULL,
+telefone_fixo VARCHAR(9),
+telefone_celular VARCHAR(9) NOT NULL,
+cep VARCHAR(8) NOT NULL,
+especialidade1 VARCHAR(20) NOT NULL,
+especialidade2 VARCHAR(20) NOT NULL
+)

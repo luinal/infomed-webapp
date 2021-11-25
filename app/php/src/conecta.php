@@ -1,28 +1,6 @@
 <?php
-/*
-$servidor="localhost";
-$usuario="root";
-$senha="";
-$bancodedados="db_mysqli";
-
-$mysqli=new mysqli($servidor,$usuario,$senha,$bancodedados);
-
-if(mysqli_connect_errno()){
-    die("Houve um erro:".mysqli_connect_errno());
-    exit();
-}
-*/
-
-
-
-
-
-
-
-
-
  // The MySQL service named in the docker-compose.yml.
-	$host = 'db';
+	$host = 'infomed-db';
 
 	// Database use name
 	$user = 'MYSQL_USER';
@@ -36,21 +14,6 @@ if(mysqli_connect_errno()){
 	// check the MySQL connection status
 	$conn = new mysqli($host, $user, $pass, $mydatabase);
 
-    /*
-	$sql = 'SELECT * FROM users';
-
-	if ($result = $conn->query($sql)) {
-		while ($data = $result->fetch_object()) {
-			$users[] = $data;
-		}
-	}
-
-	foreach ($users as $user) {
-		echo "<br>";
-		echo $user->username . " " . $user->password;
-		echo "<br>";
-	}
-    */
     $sql = 'SELECT * FROM usuarios';
 
     if ($result = $conn->query($sql)) {
@@ -58,7 +21,7 @@ if(mysqli_connect_errno()){
 			$usuarios[] = $data;
 		}
 	}
-   
+/*
     foreach ($usuarios as $user) {
         echo "<br>";
         echo $user->Id;
@@ -92,20 +55,10 @@ if(mysqli_connect_errno()){
         echo $user->especialidade2;
         echo "<br>";
     }
-
-
-
-
-
-
-
-
-
+*/
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	} else {
 		echo "Connected to MySQL server successfully!";
 	}
-
-
 ?>

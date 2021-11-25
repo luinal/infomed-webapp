@@ -1,21 +1,29 @@
 <!doctype html>
 <html lang="pt-br">
 	<head>
-		<title>Infomed - Tela Inicial</title>
+		<title>Infomed - Buscar médico</title>
 		<meta charset="utf-8">
 
-		<link rel="stylesheet" type="text/css" href="css/estilo.css">
+		<link rel="stylesheet" type="text/css" href="../../css/estilo.css">
 
     <body id="tela_de_consulta">
+        <a href="../../index.html" id="back-button">Voltar</a>
 
-		<div id="containerConsulta">
+		<div>
 			<div id="logo">
 				<h1>Info<span id="title-span">med</span></h1>
 				
 			</div>
-		
-
 		</div>
+
+        <div  id="container">
+            <h2>Pesquisar</h2>
+            <h3>mudou algo?</h3>
+            <form action="_buscar.php" method"GET">
+                <input type="text" name="digito_busca" size="50" placeholder="Digite aqui">
+                <button style="width:100px";>Buscar</button>
+            </form>
+        </div>
 
 	</body>
 
@@ -38,7 +46,7 @@
 
 
 
-<!--
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -117,4 +125,3 @@ $(document).ready(function(){
     </div>
 </body>
 </html>
--->
