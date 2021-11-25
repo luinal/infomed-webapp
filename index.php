@@ -4,7 +4,7 @@
 		<title>Infomed - Tela Inicial</title>
 		<meta charset="utf-8">
 
-		<link rel="stylesheet" type="text/css" href="estilo.css">
+		<link rel="stylesheet" type="text/css" href="css/estilo.css">
 
     <body id="tela_inicial">
 
