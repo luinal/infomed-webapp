@@ -25,7 +25,9 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo "id: " . $row["id"]. " - Nome: " . $row["nome"]. " " . " - CRM: " . $row["crm"]. "<br>";
+  echo "id: " . $row["id"]. "
+// echo "id: " . $row["id"]. " - Nome: " . $row["nome"]. " - CRM: " . $row["crm"].;"
+	
   }
 } else {
   echo "0 results";
@@ -33,7 +35,11 @@ if ($result->num_rows > 0) {
 
 echo "$nome";
 
-$resultados = $result->fetch_assoc();
+$resultados = $result->fetchAll(PDO::FETCH_ASSOC);
+
+print_r($resultados);
+print_r($result);
+
 
 $conn->close();
 
@@ -48,9 +54,12 @@ $conn->close();
 		<link rel="stylesheet" type="text/css" href="../../css/estilo.css">
 
     <body>
-   		
-   		<h2>Resultado da busca</h2>
-		<?php
+			<a href="../../index.html" id="back-button">Voltar</a>
+   		<div id="container_resultado">
+			<div id="logo">
+				<h2>Resultado da busca</h2>
+				<h1>Info<span id="title-span">med</span></h1>
+				<?php
 		if (count($resultados)) {
 			foreach($resultados as $Resultado) {
 		?>
@@ -62,6 +71,9 @@ $conn->close();
 	}
 }
 	?>
+			</div>
+   		
+		
 
 	</body>
 
