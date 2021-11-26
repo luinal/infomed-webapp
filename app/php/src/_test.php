@@ -91,12 +91,12 @@
 
                         echo '<tr>';   
 
-
+                        $id = $row["id"];
                         //Botão de edição
-                        echo "<td><form action='_edit.php' method='POST'><input type='image' src='imagens/edit.png' width='18' height='18' name='botao-edit' value='".$row["id"]."'/></form></td>";
+                        echo "<td><form action='atualizacao_cadastral.php' method='POST'><input type='image' src='../../imagens/edit.png' width='18' height='18' name='botao-edit' value='".$id."'/></form></td>";
                         
                         //Botão de excluir
-                        echo "<td><form action='_delete.php' method='POST'><input type='image' src='imagens/delete.png' width='18' height='18' name='botao-delete' value='".$row["id"]."'/></form></td>";
+                        echo "<td><form action='_delete.php' method='POST'><input type='image' src='../../imagens/delete.png' width='18' height='18' name='botao-delete' value='<?php echo $id; ?>'/></form></td>";
 
                         echo '<td width="10px">' . $data['id'] . '</td>';
                         echo '<td align="left" width="128px">' . $data['nome'] . '</td>';
