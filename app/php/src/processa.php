@@ -1,5 +1,4 @@
 <?php
-
     include("conecta.php");
 
     $id=0;
@@ -11,21 +10,10 @@
     $especialidade1=$_POST['especialidades'];
     $especialidade2=$_POST['especialidade2'];
 
-    $sql=$conn->prepare("insert into usuarios values (?,?,?,?,?,?,?,?)");
+    $sql = "INSERT INTO usuarios (id,nome,crm,telefone_fixo,telefone_celular,cep,especialidade1,especialidade2)
+    VALUES ('$id','$nome','$crm','$telefone_fixo','$telefone_celular','$cep','$especialidade1','$especialidade2')";
 
-    $sql->bind_param("isssssss",$id,$nome,$crm,$telefone_fixo,$telefone_celular,$cep,$especialidade1,$especialidade2);
 
-    $sql->execute();
-
-    $sql->store_result();
-
-    $result=$sql->affected_rows;
-
-    if($result > 0){
-        echo "Dados Inseridos com Sucesso!";
-    }else{
-        echo "Houve um erro";
-    }
 ?>
 
 <!doctype html>
@@ -36,26 +24,28 @@
 
 		<link rel="stylesheet" type="text/css" href="../../css/estilo.css">
 
-    <body id="tela_inicial">
+    <body>
 
-		<div id="container">
-			<div id="logo">
-				<h1>Info<span id="title-span">med</span></h1>
-				
+
+		<div id="container-indice">
+			<div id="logo-indice-container">
+				<p id="logo-indice"><span style="color:black">Info</span><span style="color:red">Med</span></p>	
 			</div>
-			<h2><i>Dados inseridos com sucesso!</i></h2>
-			<!--<img src="imagens/perfil.png"> -->
+          
 
-				<ul>
-                    <li><a href="../../index.html">Voltar para o menu inicial</a></li>	
-					<li><a href="cadastro.php">Cadastrar outro Médico</a></li>
-					<li><a href="consulta.php">Procurar Médico</a></li>					
-				</ul>
-
-			<form>
-				
-	
-			</form>
+			<ul id="ul-resultado">
+                <?php
+                    if (mysqli_query($conn, $sql)) {
+                        echo '<br>'."Usuário cadastrado com sucesso.".'<br>';
+                    } else {
+                        echo "Error: " . $sql . ":-" . mysqli_error($conn);
+                    }
+                    mysqli_close($conn);
+                ?>
+                <li><a href="../../index.html">Voltar para o menu inicial</a></li>	
+				<li><a href="cadastro.php">Cadastrar outro Médico</a></li>
+				<li><a href="consulta.php">Procurar Médico</a></li>					
+			</ul>
 
 		</div>
 

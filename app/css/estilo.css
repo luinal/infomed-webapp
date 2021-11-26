@@ -1,10 +1,5 @@
-body{
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	color: #262626;
-	background: #84d2e2;
 
-}
-
+/*
 fieldset{
 	margin: 1em 1em;
 	padding: 1.5em;
@@ -86,7 +81,7 @@ select{
     border: 1px solid red;
 	color: red;
 }
-*/
+
 
 
 
@@ -96,7 +91,7 @@ h1 {
 	color: #262626;
 }
 
-#container {
+#container-indice {
 	width: 400px;
 	height: 300px;
 	background-color: rgb(233, 233, 233);
@@ -170,15 +165,276 @@ ul  a {
 	font-weight: bold;
 	
 }
-a:visited {
-	color: #262626;
-}
 
-a:hover {
-	color: #1095b0;
-}
 
 #title-span {
 	color: red;
 }
+*/
 
+
+
+
+
+
+
+/*-----------------------
+------------------------*/
+
+
+body{
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	color: #262626;
+	background: #84d2e2;
+
+}
+
+
+
+/* PÁGINA DE PROCURA */
+#logo{
+	margin: 0;
+	padding: 0;
+	margin-left: 42px;
+	font-weight: bold;
+	text-align: center;
+}
+
+#cabecalho{
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	font-size: 72px;
+	text-align: left;
+	width: 100%;
+	background: darkgrey;
+	height: 80px;
+}
+
+#corpo{
+	width: 100%;
+	height: 100%;
+	min-height: 1em;
+	max-height: 1em;
+	clear: both;
+}
+
+#resultado{
+	text-indent: 10px;
+	width: 91%;
+	float: left;
+	height: 100%;
+	min-height: 510px;
+	background-color: white;
+}
+
+p.texto-resultado {
+	margin: 10px;
+	padding: 10px;
+}
+
+#navegacao{
+	width: 9%;
+	float: left;
+	background: #d0d0d0;
+	height: 400px;
+	min-height: 510px;
+}
+
+#rodape{
+	background: #5b5b5b;
+	width: 100%;
+	height: 48px;
+	clear: both;
+	color: #f8f8f8;
+	font-size: 18px;
+}
+
+div#navegacao ul {
+	text-decoration: none;
+	list-style: none;
+	padding: 0;
+	margin-left: 6px;
+	margin-top: 40px;
+}
+
+div#navegacao li{
+	margin-bottom: 10px;
+}
+
+a {
+	text-decoration: none;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+
+a:visited {
+	color: #262626;
+}
+
+a:hover{
+	color: #000;
+}
+
+table{
+	width: 1200px;
+	margin: 10px;
+	margin-left: 15px;
+	max-width: ;
+	text-align: center;
+}
+
+
+/* ÍNDICE */
+#container-indice {
+	width: 400px;
+	height: 300px;
+	background-color: rgb(233, 233, 233);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	margin: 0 auto;
+	margin-top: 100px;
+	text-align: center;
+}
+
+#logo-indice-container {
+	width: 100%;
+	background-color: white;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	font-size: 80px;
+
+}
+#logo-indice{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+
+#ul-indice{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
+	margin-top: 38px;
+}
+
+ul#ul-indice a {
+	font-size: 24px;
+}
+
+
+ul#ul-indice li {
+	padding-bottom: 10px;
+}
+
+
+
+/*-----------------------------
+ 			CADASTRO 
+ ------------------------------*/
+
+ fieldset{
+	margin: 1em 1em;
+	padding: 1.5em;
+	border-top: 1px solid #ccc;
+	background: #f8f8f8;
+	float: left;
+	height: 400px;
+
+}
+
+#endereco {
+	display: block;
+	background: #f8f8f8;
+	width: 600px;
+}
+
+#submit {
+	float: left;
+	color: #fff;
+	background-color: rgb(255, 45, 45);
+	border: 2px solid #b10000;
+	padding: 5px 20px;
+	height: 45px;
+	width: 180px;
+	margin-top: 10px;
+
+}
+
+legend {
+	font-size: 22px;
+	font-weight: bold;
+
+}
+
+label{
+	text-indent: 0px;
+	display: block;
+	cursor: pointer;
+}
+
+input[type="text"] {
+	width: 20em;
+	margin-bottom: 10px;
+}
+
+input[type="tel"] {
+	margin-bottom: 10px;
+}
+
+input.radio, 
+input.checkbox, 
+input.submit {
+	width: auto;
+}
+
+.radio{
+	margin-right: 0.3em;
+}
+
+select{
+	font-size: 15px;
+	border-top: 1px solid #ccc;
+	background: #d8d8d8;
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+
+
+#endereco input {
+	display: block;
+}
+
+#back-button {
+	font-size: 24px;
+	float: none;
+	display: block;
+}
+
+div#cadastro-submit input[type="submit"] {
+	font-size: 18px;
+}
+
+
+/* RESULTADO CADASTRO */
+
+#ul-resultado{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	list-style: none;
+	margin-top: 38px;
+}
+
+ul#ul-resultado a {
+	font-size: 18px;
+}
+
+
+ul#ul-resultado li {
+	padding-bottom: 10px;
+}

@@ -1,25 +1,18 @@
 <?php
+
+include("conecta.php");
+
 	if (!isset($_GET['digito_busca'])){
 		header("Location: consulta.php");
 		exit;
 	}
 
+
 $nome = "%".trim($_GET['digito_busca'])."%";
 
-$host = 'infomed-db';
-$user = 'MYSQL_USER';
-$pass = 'MYSQL_PASSWORD';
-$mydatabase = 'MYSQL_DATABASE';
-
-//Create connection
-$conn = new mysqli($host, $user, $pass, $mydatabase);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-} 
 
 //Defines and executes the query
-$sql = "SELECT * FROM usuarios;
+$sql = "SELECT * FROM usuarios ORDER BY id";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

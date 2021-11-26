@@ -80,42 +80,53 @@
 	</head>
 
 	<body>
-		<a href="../../index.html" id="back-button">Voltar</a>
-		
+		<div id="cabecalho">
+            <p id="logo"><span style="color:white">Info</span><span style="color:red">Med</span></p>
+         </div>
+
+            <div id="navegacao">
+                <ul>
+                    <li><a href="../../index.html">Voltar para página inicial</a></li>
+                    <li><a href="consulta.php">Buscar</a></li>
+                </ul>
+            </div>
+
+            <div id="resultado">                   
+             	
 		<fieldset>
 		<legend>Detalhes de Contato</legend>
 			<form name="form1" action="processa.php" method="post"> 	
 				
 				<div>
 					<label for="nome">Nome: </label>
-					<input type="text" name="nome" id="nome" size="8" required>
+					<input type="text" name="nome" id="nome" size="8" required maxlength="120">
 				</div>
 
 				<div>
 					<label for="crm">CRM: </label>
-					<input type="text" name="crm" id="crm" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+					<input type="text" name="crm" id="crm" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" / maxlength="7">
 				</div>
 
 				<div>
 					<label for="telefone_fixo">Telefone Fixo (opcional): </label>
-					<input type="tel" name="telefone_fixo" id="telefone_fixo" pattern="[0-9]+" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/>
+					<input type="tel" name="telefone_fixo" id="telefone_fixo" pattern="[0-9]+" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/ maxlength="9">
 				</div>
 
 				<div>
 					<label for="telefone_celular">Telefone Celular: </label>
-					<input type="tel" name="telefone_celular" id="telcelular" pattern="[0-9]+" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+					<input type="tel" name="telefone_celular" id="telcelular" pattern="[0-9]+" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" / maxlength="9">
 				</div>
 
 				<div>
 					<label for="especialidade">Selecione as especialidades: </label>
 					<select id="especialidade" name="especialidades">
-                        <option value="Alergologia">-Selecione aqui-</option>
+                        <option value="" default>-Selecione aqui-</option>
 						<option value="Alergologia">Alergologia</option>
 						<option value="Angiologia">Angiologia</option>
 						<option value="Buco maxilo">Buco Maxilo</option>
 						<option value="Cardiologia clinica">Cardiologia Clínica</option>
 						<option value="Cardiologia infantil">Cardiologia Infantil</option>
-						<option value="Cirurgia cabeca e pescoco">Cirurgia Cabeça e Pescoço</option>
+						<option value="Cirrgia cabeca e pescoco">Cirurgia Cabeça e Pescoço</option>
 						<option value="Cirurgia cardiaca">Cirurgia Cardíaca</option>
 						<option value="Cirurgia de torax">Cirurgia de Tórax</option>
 					</select>
@@ -124,7 +135,8 @@
 				<div>
 					<label for="especialidade2">Segunda Especialidade: </label>
 					<select id="especialidade2" name="especialidade2">
-                        <option value="Alergologia">-Selecione aqui-</option>
+
+                        <option value="" default>-Selecione aqui-</option>
 						<option value="Alergologia">Alergologia</option>
 						<option value="Angiologia">Angiologia</option>
 						<option value="Buco maxilo">Buco Maxilo</option>
@@ -135,59 +147,38 @@
 						<option value="Cirurgia de torax">Cirurgia de Tórax</option>
 					</select>
 				</div>
-        
+
+       			
 		</fieldset>
-		<!--
-			<fieldset>
-				<legend>Comentários</legend>
-				<div>
-					<label for="mensagem">Mensagem:</label>
-					<textarea name="mensagem" id="mensagem"></textarea>
-				</div>
-			</fieldset>
-
-			<fieldset>
-				<legend>Lembrar de mim</legend>
-				<div>
-					<label>
-						<input class="radio" type="radio" name="lembrar" id="sim"> Sim
-					</label>
-				</div>
-
-				<div>
-					<label>
-						<input class="radi" type="radio" name="lembrar" id="nao"> Não
-					</label>
-				</div>
-
-		</fieldset>
-		-->
-		
 
 		<fieldset>
 			<legend>Endereço</legend>
-			  <!-- Inicio do formulario -->
 			
-				<label>Cep:
+				<label>Cep:</label>
 				<input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
 					onblur="pesquisacep(this.value);" /></label><br />
-				<label>Rua:
+				<label>Rua:</label>
 				<input name="rua" type="text" id="rua" size="60" /></label><br />
-				<label>Bairro:
+				<label>Bairro:</label>
 				<input name="bairro" type="text" id="bairro" size="40" /></label><br />
-				<label>Cidade:
+				<label>Cidade:</label>
 				<input name="cidade" type="text" id="cidade" size="40" /></label><br />
-				<label>Estado:
+				<label>Estado:</label>
 				<input name="uf" type="text" id="uf" size="2" /></label><br />
 
-				<div>
+				<div id="cadastro-submit">
 					<input type="submit" name="botao" value="Cadastrar" id="submit">
 				</div>
 
      		</form>
 		</fieldset>
 
-		
+            </div>
+           
+                
+         
+         <div id="rodape"></div>
+				
 	</body>
  
 </html>
