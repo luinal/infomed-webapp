@@ -24,7 +24,7 @@
 
     if($edit)
     {
-        mysqli_close($conn); // Close connection
+        mysqli_close($conn); 
         header('Location: _edit.php');
         exit;
     }
@@ -125,8 +125,9 @@
 
             <div id="navegacao">
                 <ul>
-                    <li><a href="../../index.html">Voltar para página inicial</a></li>
-                    <li><a href="consulta.php">Buscar</a></li>
+                    <li><a href="../../index.html">Voltar para página inicial</a></li>                  
+                    <li><a href="consulta.php">Consulta</a></li>
+                    <li><a href="cadastro.php">Cadastrar</a></li>
                 </ul>
                 
             </div>

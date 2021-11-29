@@ -8,7 +8,7 @@
 
     $busca = "%".trim($_GET['digito_busca'])."%";
 
-    //Defines and executes the query
+    //Define e executa o querry
     $sql = "SELECT * FROM usuarios WHERE CONCAT(nome, crm, telefone_fixo, telefone_celular, cep, especialidade1, especialidade2) LIKE '$busca' ORDER BY id";
 
     
@@ -49,7 +49,7 @@
                     <h2 class="pesquisar">Pesquisar</h2>
          
             
-                    <form action="_test.php" method="GET">
+                    <form action="_resultados_busca.php" method="GET">
                         <input type="text" name="digito_busca" size="50" placeholder="Digite aqui">
                         <button style="width:100px";>Buscar</button>
                     </form>

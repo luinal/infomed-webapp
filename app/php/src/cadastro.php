@@ -96,7 +96,7 @@
              	
 		<fieldset>
 		<legend>Detalhes de Contato</legend>
-			<form name="form1" action="processa.php" method="post"> 	
+			<form name="form1" action="_processa_cadastro.php" method="post"> 	
 				
 				<div>
 					<label for="nome">Nome: </label>

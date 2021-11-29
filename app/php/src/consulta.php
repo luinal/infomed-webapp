@@ -24,7 +24,7 @@
                     <h2 class="pesquisar">Pesquisar</h2>
          
             
-                    <form action="_test.php" method="GET">
+                    <form action="_resultados_busca.php" method="GET">
                         <input type="text" name="digito_busca" size="50" placeholder="Digite aqui">
                         <button style="width:100px";>Buscar</button>
                     </form>

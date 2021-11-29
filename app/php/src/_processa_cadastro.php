@@ -34,14 +34,7 @@
           
 
 			<ul id="ul-resultado">
-                <?php
-                    if (mysqli_query($conn, $sql)) {
-                        echo '<br>'."Usuário cadastrado com sucesso.".'<br>';
-                    } else {
-                        echo "Error: " . $sql . ":-" . mysqli_error($conn);
-                    }
-                    mysqli_close($conn);
-                ?>
+                <li><h2>Usuário cadastrado com sucesso.</h2></li>
                 <li><a href="../../index.html">Voltar para o menu inicial</a></li>	
 				<li><a href="cadastro.php">Cadastrar outro Médico</a></li>
 				<li><a href="consulta.php">Procurar Médico</a></li>					
