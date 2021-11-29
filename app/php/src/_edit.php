@@ -1,27 +1,33 @@
-<?php 
- 
-include_once 'conecta.php';
-
-$nome=$_POST['nome'];
-$crm=$_POST['crm'];
-$telefone_fixo=$_POST['telefone_fixo'];
-$telefone_celular=$_POST['telefone_celular'];
-$cep=$_POST['cep'];
-$especialidade1=$_POST['especialidades'];
-$especialidade2=$_POST['especialidade2'];
- 
-$sql = "UPDATE usuarios SET nome = '$nome', crm = '$crm', telefone_fixo = '$telefone_fixo', telefone_celular = '$telefone_celular', cep = '$cep', especialidade1 = '$especialidade1', especialidade2 = '$especialidade2' WHERE id=$id";
- 
- 
-$query = mysqli_query($conn,$sql);
-if(!$query)
-{
-    echo "Query does not work.".mysqli_error($conn);die;
-}
-else
-{
-    echo "Data successfully updated";
-}
- 
-   
+<?php
+    include_once 'conecta.php';
 ?>
+
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<title>Infomed - Tela Inicial</title>
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" type="text/css" href="../../css/estilo.css">
+
+    <body>
+
+
+		<div id="container-indice">
+			<div id="logo-indice-container">
+				<p id="logo-indice"><span style="color:black">Info</span><span style="color:red">Med</span></p>	
+			</div>
+          
+
+			<ul id="ul-resultado">
+                <li><h2>Cadastro alterado com sucesso.</h2></li>
+                <li><a href="../../index.html">Voltar para o menu inicial</a></li>	
+				<li><a href="cadastro.php">Cadastrar outro Médico</a></li>
+				<li><a href="consulta.php">Procurar Médico</a></li>					
+			</ul>
+
+		</div>
+
+	</body>
+
+</html>

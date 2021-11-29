@@ -22,7 +22,7 @@ services:
       - "9906:3306"
   phpmyadmin:
     container_name: infomed-phpmyadmin
-    image: phpmyadmin
+    image: phpmyadmin 
     ports:
       - '8023:80'
     restart: always

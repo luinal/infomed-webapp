@@ -1,32 +1,39 @@
 <?php
     include_once 'conecta.php';
     
-    $id=$_POST['botao-edit'];
+    $id=$_GET['id'];
 
-    $sql = "SELECT * FROM usuarios WHERE id=$id";
+    $sql = "SELECT * FROM usuarios WHERE id='$id'";
 
     $query = mysqli_query($conn,$sql);
 
     $data = mysqli_fetch_array($query);
 
-    $nome=$data['nome'];
-    $crm=$data['crm'];
-    $telefone_fixo=$data['telefone_fixo'];
-    $telefone_celular=$data['telefone_celular'];
-    $cep=$data['cep'];
-    $especialidade1=$data['especialidades'];
-    $especialidade2=$data['especialidade2'];
-
-    
-
-    if(!$query)
+    if(isset($_POST['update']))
     {
-        echo "Query does not work.".mysqli_error($conn);die;
+        $nome = $_POST['nome'];
+        $crm = $_POST['crm'];
+        $telefone_fixo = $_POST['telefone_fixo'];
+        $telefone_celular = $_POST['telefone_celular'];
+        $cep = $_POST['cep'];
+        $especialidade1 = $_POST['especialidades'];
+        $especialidade2 = $_POST['especialidade2'];
+
+        $edit = mysqli_query($conn,"update usuarios set nome='$nome', crm='$crm', telefone_fixo='$telefone_fixo', telefone_celular='$telefone_celular', cep='$cep', especialidade1='$especialidade1', especialidade2='$especialidade2' where id='$id'");
+    }
+
+    if($edit)
+    {
+        mysqli_close($conn); // Close connection
+        header('Location: _edit.php');
+        exit;
     }
     else
     {
-        echo "Data successfully updated";
-    }
+        echo mysqli_error($conn);
+    }    	
+
+    
 
 ?>
 
@@ -121,45 +128,42 @@
                     <li><a href="../../index.html">Voltar para página inicial</a></li>
                     <li><a href="consulta.php">Buscar</a></li>
                 </ul>
-                <?php                   
-                    echo 'O id é: '.$id;
-                ?>
+                
             </div>
 
             <div id="resultado">                   
              	
 		<fieldset>
 		<legend>Detalhes de Contato</legend>
-			<form name="form1" action="_edit.php" method="post"> 	
+			<form method="post"> 	
 
                 
-                <input type="hidden" name="id" value="<?php echo $id; ?>">
+                <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
 				
 				<div>
 					<label for="nome">Nome: </label>
-					<input type="text" name="nome" id="nome" size="8" required maxlength="120" value="<?php echo $nome; ?>">
+					<input type="text" name="nome" id="nome" size="8" required maxlength="120" value="<?php echo $data['nome']; ?>">
 				</div>
 
 
 				<div>
 					<label for="crm">CRM: </label>
-					<input type="text" name="crm" id="crm" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" / maxlength="7">
+					<input type="text" name="crm" id="crm" value="<?php echo $data['crm']; ?>" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" / maxlength="7">
 				</div>
 
 				<div>
 					<label for="telefone_fixo">Telefone Fixo (opcional): </label>
-					<input type="tel" name="telefone_fixo" id="telefone_fixo" pattern="[0-9]+" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/ maxlength="9">
+					<input type="tel" name="telefone_fixo" id="telefone_fixo" value="<?php echo $data['telefone_fixo']; ?>" pattern="[0-9]+" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"/ maxlength="9">
 				</div>
 
 				<div>
 					<label for="telefone_celular">Telefone Celular: </label>
-					<input type="tel" name="telefone_celular" id="telcelular" pattern="[0-9]+" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" / maxlength="9">
+					<input type="tel" name="telefone_celular" id="telcelular" value="<?php echo $data['telefone_celular']; ?>" pattern="[0-9]+" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" / maxlength="9">
 				</div>
 
 				<div>
 					<label for="especialidade">Selecione as especialidades: </label>
-					<select id="especialidade" name="especialidades">
-                        <option value="" default>-Selecione aqui-</option>
+					<select id="especialidade" name="especialidades" required value="<?php echo $data['especialidade1']; ?>">
 						<option value="Alergologia">Alergologia</option>
 						<option value="Angiologia">Angiologia</option>
 						<option value="Buco maxilo">Buco Maxilo</option>
@@ -173,9 +177,7 @@
                 
 				<div>
 					<label for="especialidade2">Segunda Especialidade: </label>
-					<select id="especialidade2" name="especialidade2">
-
-                        <option value="" default>-Selecione aqui-</option>
+					<select id="especialidade2" name="especialidade2" required value="<?php echo $data['especialidade2']; ?>">
 						<option value="Alergologia">Alergologia</option>
 						<option value="Angiologia">Angiologia</option>
 						<option value="Buco maxilo">Buco Maxilo</option>
@@ -194,7 +196,7 @@
 			<legend>Endereço</legend>
 			
 				<label>Cep:</label>
-				<input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+				<input name="cep" type="text" id="cep" value="" size="10" maxlength="9" required value="<?php echo $data['cep']; ?>"
 					onblur="pesquisacep(this.value);" /></label><br />
 				<label>Rua:</label>
 				<input name="rua" type="text" id="rua" size="60" /></label><br />
@@ -206,9 +208,9 @@
 				<input name="uf" type="text" id="uf" size="2" /></label><br />
 
 				<div id="cadastro-submit">
-					<input type="submit" name="botao" value="Atualizar Cadastro" id="submit">
+					<input type="submit" name="update" value="Atualizar Cadastro" id="submit">
 				</div>
-
+                
      		</form>
 		</fieldset>
 

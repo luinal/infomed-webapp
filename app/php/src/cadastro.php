@@ -86,8 +86,9 @@
 
             <div id="navegacao">
                 <ul>
-                    <li><a href="../../index.html">Voltar para página inicial</a></li>
-                    <li><a href="consulta.php">Buscar</a></li>
+					<li><a href="../../index.html">Voltar para página inicial</a></li>                  
+                    <li><a href="consulta.php">Consulta</a></li>
+                    <li><a href="cadastro.php">Cadastrar</a></li>
                 </ul>
             </div>
 
@@ -119,8 +120,8 @@
 
 				<div>
 					<label for="especialidade">Selecione as especialidades: </label>
-					<select id="especialidade" name="especialidades">
-                        <option value="" default>-Selecione aqui-</option>
+					<select id="especialidade" name="especialidades" required>
+                        <option value="" selected disabled>-Selecione aqui-</option>
 						<option value="Alergologia">Alergologia</option>
 						<option value="Angiologia">Angiologia</option>
 						<option value="Buco maxilo">Buco Maxilo</option>
@@ -134,9 +135,9 @@
                 
 				<div>
 					<label for="especialidade2">Segunda Especialidade: </label>
-					<select id="especialidade2" name="especialidade2">
+					<select id="especialidade2" name="especialidade2" required>
 
-                        <option value="" default>-Selecione aqui-</option>
+                        <option value="" selected disabled>-Selecione aqui-</option>
 						<option value="Alergologia">Alergologia</option>
 						<option value="Angiologia">Angiologia</option>
 						<option value="Buco maxilo">Buco Maxilo</option>
@@ -155,7 +156,7 @@
 			<legend>Endereço</legend>
 			
 				<label>Cep:</label>
-				<input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+				<input name="cep" type="text" id="cep" value="" size="10" maxlength="9" required
 					onblur="pesquisacep(this.value);" /></label><br />
 				<label>Rua:</label>
 				<input name="rua" type="text" id="rua" size="60" /></label><br />

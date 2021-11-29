@@ -55,71 +55,67 @@
                     </form>
                     <p class="texto-resultado">
 
-                        <?php
+                <table>
 
-              
-
-                if (($rows = $query->num_rows) > 0) {
-                    if ($rows != 1) {
-                        echo '<h3>'.'Foram encontrados ' . $rows , ' resultados correspondentes à pesquisa:'.'</h3>';      
-                    } else {
-                        echo '<h3>'.'Foi encontrado um resultado correspondente à busca:'.'</h3>';
+                <?php
+                    // Checando quantidade de resultados retornados
+                    if (($rows = $query->num_rows) > 0) {
+                        if ($rows != 1) {
+                            echo '<h3>'.'Foram encontrados ' . $rows , ' resultados correspondentes à pesquisa:'.'</h3>';      
+                        } else {
+                            echo '<h3>'.'Foi encontrado um resultado correspondente à busca:'.'</h3>';                                                      
+                        }
                         
-                    }
-                                        
-                    echo '<table class="data-table" width="80%" border="1" style="border-collapse:collapse;">
-                                   
-                    <tr class="data-heading">';  
+                        //Desenhando cabeçalho da tabela
+                        echo '<table class="data-table" width="80%" border="1" style="border-collapse:collapse;">
+                                    
+                        <tr class="data-heading">';  
 
-                     
-                    echo '<td align="center" style="border: none;"' . '<strong>' . '' . '</strong>' . '</td>';
-                    echo '<td align="center" style="border: none;"' . '<strong>' . '' . '</strong>' . '</td>';
-                    echo '<td align="center">' . '<strong>' . 'ID' . '</strong>' . '</td>';
-                    echo '<td align="center">' . '<strong>' . 'Nome' . '</strong>' . '</td>';
-                    echo '<td align="center">' . '<strong>' . 'CRM' . '</strong>' . '</td>';
-                    echo '<td align="center">' . '<strong>' . 'Telefone Fixo' . '</strong>' . '</td>';
-                    echo '<td align="center">' . '<strong>' . 'Celular' . '</strong>' . '</td>';
-                    echo '<td align="center">' . '<strong>' . 'CEP' . '</strong>' . '</td>';
-                    echo '<td align="center">' . '<strong>' . 'Especialidade 1' . '</strong>' . '</td>';
-                    echo '<td align="center">' . '<strong>' . 'Especialidade 2' . '</strong>' . '</td>';
-
-                    echo '</tr>';
-            
-                    
-                    while($data = mysqli_fetch_array($query))
-                    {
-
-                        echo '<tr>';   
-
-                        $id = $row["id"];
-                        //Botão de edição
-                        echo "<td><form action='atualizacao_cadastral.php' method='POST'><input type='image' src='../../imagens/edit.png' width='18' height='18' name='botao-edit' value='".$id."'/></form></td>";
                         
-                        //Botão de excluir
-                        echo "<td><form action='_delete.php' method='POST'><input type='image' src='../../imagens/delete.png' width='18' height='18' name='botao-delete' value='<?php echo $id; ?>'/></form></td>";
+                        echo '<td align="center" style="border: none;"' . '<strong>' . '' . '</strong>' . '</td>';
+                        echo '<td align="center" style="border: none;"' . '<strong>' . '' . '</strong>' . '</td>';
+                        echo '<td align="center">' . '<strong>' . 'ID' . '</strong>' . '</td>';
+                        echo '<td align="center">' . '<strong>' . 'Nome' . '</strong>' . '</td>';
+                        echo '<td align="center">' . '<strong>' . 'CRM' . '</strong>' . '</td>';
+                        echo '<td align="center">' . '<strong>' . 'Telefone Fixo' . '</strong>' . '</td>';
+                        echo '<td align="center">' . '<strong>' . 'Celular' . '</strong>' . '</td>';
+                        echo '<td align="center">' . '<strong>' . 'CEP' . '</strong>' . '</td>';
+                        echo '<td align="center">' . '<strong>' . 'Especialidade 1' . '</strong>' . '</td>';
+                        echo '<td align="center">' . '<strong>' . 'Especialidade 2' . '</strong>' . '</td>';
 
-                        echo '<td width="10px">' . $data['id'] . '</td>';
-                        echo '<td align="left" width="128px">' . $data['nome'] . '</td>';
-                        echo '<td width="0px">' . $data['crm'] . '</td>';
-                        echo '<td width="0px">' . $data['telefone_fixo'] . '</td>';
-                        echo '<td width="0px">' . $data['telefone_celular'] . '</td>';
-                        echo '<td width="0px">' . $data['cep'] . '</td>';
-                        echo '<td width="0px">' . $data['especialidade1'] . '</td>';
-                        echo '<td width="0px">' . $data['especialidade2'] . '</td>';
                         echo '</tr>';
+                        
+                        //Desenhando resultados da busca
+                        while($data = mysqli_fetch_array($query))
+                            {
+                            ?>
+                                <tr>
+                                <td><a href="atualizacao_cadastral.php?id=<?php echo $data['id']; ?>"><img src="../../imagens/edit.png" width='18' height='18'></a></td>
+                                <td><a href="_delete.php?id=<?php echo $data['id']; ?>"><img src="../../imagens/delete.png" width='18' height='18'></a></td> 
+
+                                
+                                <td><?php echo $data['id']; ?></td>
+                                <td width="450" align="left"><?php echo $data['nome']; ?></td>
+                                <td><?php echo $data['crm']; ?></td>
+                                <td><?php echo $data['telefone_fixo']; ?></td>
+                                <td><?php echo $data['telefone_celular']; ?></td>
+                                <td><?php echo $data['cep']; ?></td>
+                                <td><?php echo $data['especialidade1']; ?></td>
+                                <td><?php echo $data['especialidade2']; ?></td>    
+                                                              
+                            </tr>
+                            <?php
+                            }
+
+                    } else {
+                        echo '<h3>'."Nenhum resultado encontrado para a busca.".'</h3>';
                     }
                 
-                    echo "</table>";
-
-                } 
-                else {
-                    echo '<h3>'."Nenhum resultado encontrado para a busca.".'</h3>';
-                }
-
                 $conn->close();
-
                 ?>
-                    </p>
+
+                </table>
+                </p>
                 </div>
                     
          

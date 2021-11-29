@@ -1,187 +1,3 @@
-
-/*
-fieldset{
-	margin: 1em 1em;
-	padding: 1.5em;
-	border-top: 1px solid #ccc;
-	background: #f8f8f8;
-	float: left;
-	height: 400px;
-
-}
-
-#endereco {
-	display: block;
-	background: #f8f8f8;
-	width: 600px;
-}
-
-#submit {
-	float: right;
-	color: #fff;
-	background-color: rgb(255, 45, 45);
-	border: 2px solid #b10000;
-	padding: 5px 20px;
-	height: 45px;
-	width: 180px;
-
-}
-
-legend {
-	font-size: 18px;
-	font-weight: bold;
-
-}
-
-label{
-	display: block;
-	cursor: pointer;
-}
-
-input[type="text"] {
-	width: 20em;
-	margin-bottom: 10px;
-}
-
-textarea{
-	width: 20em;
-	height: 10em;
-}
-
-input.radio, 
-input.checkbox, 
-input.submit {
-	width: auto;
-}
-
-.radio{
-	margin-right: 0.3em;
-}
-
-select{
-	font-size: 15px;
-	border-top: 1px solid #ccc;
-	background: #d8d8d8;
-	margin-top: 5px;
-	margin-bottom: 15px;
-}
-
-
-#endereco input {
-	display: block;
-}
-
-#back-button {
-	font-size: 24px;
-	float: none;
-	display: block;
-}
-
-/*input:invalid {
-    border: 1px solid red;
-	color: red;
-}
-
-
-
-
-
-
-h1 {
-	color: #262626;
-}
-
-#container-indice {
-	width: 400px;
-	height: 300px;
-	background-color: rgb(233, 233, 233);
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	margin: 0 auto;
-	margin-top: 100px;
-	text-align: center;
-}
-
-#container_resultado {
-	width: 400px;
-	height: 300px;
-	background-color: rgb(233, 233, 233);
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	margin: 0 auto;
-	margin-top: 100px;
-	text-align: center;
-}
-
-#logo {
-	background-color: white;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	
-
-}
-
-#container img {
-	width:  120px;
-	height: 120px;
-	margin-top: -60px;
-	margin-bottom: 30px;
-
-}
-
-div h1 {
-	padding-top: 10px;
-	height: 90px;
-	font-size: 75px;
-	padding-bottom: 0px;
-	margin-bottom: 0px;
-}
-
-h2 {
-	font-weight: 100;
-	padding-top: 0px;
-	padding-bottom: 20px;
-	font-size: 19px;
-}
-ul {
-	
-	list-style-type: none;
-	float: center;
-	padding-bottom: 40px;
-	margin-top: 0px;
-	padding-top: 0px;
-	padding-right: 0px;
-}
-ul  a {
-	font-size: 25px;
-	display: block;
-	margin-bottom: 15px;
-	margin-right: 35px;
-	text-decoration: none;
-	float: middle;
-	font-weight: bold;
-	
-}
-
-
-#title-span {
-	color: red;
-}
-*/
-
-
-
-
-
-
-
-/*-----------------------
-------------------------*/
-
-
 body{
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	color: #262626;
@@ -281,7 +97,7 @@ table{
 	width: 1200px;
 	margin: 10px;
 	margin-left: 15px;
-	max-width: ;
+	max-width: 80%;
 	text-align: center;
 }
 
@@ -424,10 +240,10 @@ div#cadastro-submit input[type="submit"] {
 
 #ul-resultado{
 	padding: 0;
-	margin: 0;
 	text-decoration: none;
 	list-style: none;
 	margin-top: 38px;
+	margin-bottom: 29px;
 }
 
 ul#ul-resultado a {
