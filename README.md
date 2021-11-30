@@ -47,14 +47,18 @@ Aqui, o usuário poderá procurar por um médico registrado digitando sua busca 
 ### Editar cadastro
 No lado esquerdo da exibição de registros, o usuário poderá clicar no ícone ![edição](app/imagens/edit.png) para modificar os dados no registro selecionado. Isso o levará para um menu similar ao menu de **cadastro**, onde poderá alterar os dados normalmente.
 
+<img src="app/imagens/edit.png" width="18" height="18" title="excluir">
+
 ### Excluir cadastro
 Ao lado do ícone de **editar cadastro**, o usuário poderá clicar em ![exclusão](app/imagens/delete.png) para remover o cadastro do banco de dados.
 
+<img src="app/imagens/delete.png" width="18" height="18" title="excluir">
 # Limitações conhecidas
 Não foi possível implementar os seguintes requisitos:
 - Soft Delete;
 - CodeIgniter;
 - Padrão REST;
+- Validação YUP;
 - Workspace postman/insomnia/swagger;
 
 Os seguintes problemas não puderam ser solucionados:
