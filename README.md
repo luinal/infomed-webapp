@@ -45,14 +45,12 @@ Nesse menu, o usuário poderá gerar um novo registro de médico no banco de dad
 Aqui, o usuário poderá procurar por um médico registrado digitando sua busca no campo disponível. O app então irá procurar por todos os campos do registro por uma palavra ou número coincidentes. Os resultados serão exibidos em uma tabela abaixo do campo de busca, que o usuário poderá usar para verificar, editar ou excluir os registros.
 
 ### Editar cadastro
-No lado esquerdo da exibição de registros, o usuário poderá clicar no ícone ![edição](app/imagens/edit.png) para modificar os dados no registro selecionado. Isso o levará para um menu similar ao menu de **cadastro**, onde poderá alterar os dados normalmente.
+No lado esquerdo da exibição de registros, o usuário poderá clicar no ícone <img src="app/imagens/edit.png" width="18" height="18" title="editar"> para modificar os dados no registro selecionado. Isso o levará para um menu similar ao menu de **cadastro**, onde poderá alterar os dados normalmente.
 
-<img src="app/imagens/edit.png" width="18" height="18" title="excluir">
 
 ### Excluir cadastro
-Ao lado do ícone de **editar cadastro**, o usuário poderá clicar em ![exclusão](app/imagens/delete.png) para remover o cadastro do banco de dados.
+Ao lado do ícone de **editar cadastro**, o usuário poderá clicar em <img src="app/imagens/delete.png" width="18" height="18" title="excluir"> para remover o cadastro do banco de dados.
 
-<img src="app/imagens/delete.png" width="18" height="18" title="excluir">
 # Limitações conhecidas
 Não foi possível implementar os seguintes requisitos:
 - Soft Delete;
