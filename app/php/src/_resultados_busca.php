@@ -9,7 +9,7 @@
     $busca = "%".trim($_GET['digito_busca'])."%";
 
     //Define e executa o querry
-    $sql = "SELECT * FROM usuarios WHERE CONCAT(nome, crm, telefone_fixo, telefone_celular, cep, especialidade1, especialidade2) LIKE '$busca' ORDER BY id";
+    $sql = "SELECT * FROM usuarios WHERE CONCAT(nome, crm, telefone_fixo, telefone_celular, cep, especialidade1, especialidade2) LIKE '$busca' ORDER BY nome";
 
     
     $query = mysqli_query($conn,$sql);
@@ -54,8 +54,7 @@
                         <button style="width:100px";>Buscar</button>
                     </form>
                     <p class="texto-resultado">
-
-                <table>
+                
 
                 <?php
                     // Checando quantidade de resultados retornados
@@ -67,7 +66,7 @@
                         }
                         
                         //Desenhando cabeçalho da tabela
-                        echo '<table class="data-table" width="80%" border="1" style="border-collapse:collapse;">
+                        echo '<table class="data-table" width="100%" border="1" style="border-collapse:collapse;" align="center">
                                     
                         <tr class="data-heading">';  
 

@@ -7,7 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="../../css/estilo.css">
 		
         <script>
-            
+            //Script IDE correios.
             function limpa_formulário_cep() {
                     //Limpa valores do formulário de cep.
                     document.getElementById('rua').value=("");
