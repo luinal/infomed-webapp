@@ -2,14 +2,14 @@ version: '2.1'
 services:
   infomed-app:
     container_name: infomed-app
-    image: infomed-app:latest
+    image: luinal/infomed:app
     links:
       - infomed-db
     ports:
       - 8000:80
   infomed-db:
     container_name: infomed-db
-    image: infomed-db:latest
+    image: luinal/infomed:db
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
