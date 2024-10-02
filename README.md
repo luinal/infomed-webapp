@@ -1,5 +1,5 @@
 # Introdução
-Esse webapp possibilita gerenciar a adição, edição e exclusão de cadastros de médicos em uma database MySQL.
+Esse webapp possibilita gerenciar a adição, edição e exclusão de cadastros de médicos em uma database MySQL. Projeto incompleto.
 
 # Ferramentas Utilizadas
 * Visual Studio Code;
